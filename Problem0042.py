@@ -19,13 +19,12 @@ filepath = 'res/pb0042_words.txt'
 
 def valueOfWord(word):
     val = 0
-    base = ord('A') - 1
     for letter in word:
-        val += ord(letter.upper()) - base
+        val += ord(letter.upper()) - 64
     return val
 
 def isTriangleNumber(num):
-    sol = -1 / 2 + sqrt(1 + (8 * num)) / 2
+    sol = -0.5 + sqrt(1 + (8 * num)) / 2
     if int(sol) == sol:
         return True
     else:
