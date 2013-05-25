@@ -13,6 +13,7 @@ Execution time: 1.819563 seconds
 '''
 
 from utils.Timer import timeExecution
+from utils.Palindrome import isPalindrome
 
 limit = 1000000
 
@@ -23,17 +24,10 @@ def decimalToBinary(decimal):
         decimal = int(decimal / 2)
     return binary
 
-def isPalindromic(var):
-    var = str(var)
-    for i in range(0, int(len(var)/2)):
-        if(var[i] != var[len(var)-1-i]):
-            return False
-    return True
-
 def main():
     res = 0
     for decimal in range(1, limit):
-        if(isPalindromic(decimal) and isPalindromic(decimalToBinary(decimal))):
+        if(isPalindrome(decimal) and isPalindrome(decimalToBinary(decimal))):
             res += decimal
     
     print('Result: ', res)
