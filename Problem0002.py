@@ -15,21 +15,14 @@ from utils.Timer import timeExecution
 
 limit = 4000000
 
-def isEvenNumber(num):
-    if(num % 2 == 0):
-        return True
-    else:
-        return False
-
-
 def main():
     res = 0
     a = 1
     b = 2
     while(b < limit):
-        if(isEvenNumber(a)):
+        if(a % 2 == 0):
             res += a
-        if(isEvenNumber(b)):
+        if(b % 2 == 0):
             res += b
         a += b
         b += a
