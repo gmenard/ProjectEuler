@@ -1,4 +1,5 @@
-ProjectEuler
+Practice
 ============
 
-My solutions to Project Euler problems. http://projecteuler.net/
+
+Keep my skills fresh.
