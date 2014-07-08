@@ -1,4 +1,5 @@
-ProjectEuler
+Practice
 ============
 
-Project Euler
+
+Keep my skills fresh.
