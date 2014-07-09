@@ -1,4 +1,4 @@
-package tree.bst;
+package tree.binarysearchtree;
 
 import tree.utils.Node;
 
@@ -136,7 +136,7 @@ public class BST<T extends Comparable<T>> {
 		root = deleteMin(root);
 	}
 
-	public Node<T> deleteMin(Node<T> node) {
+	private Node<T> deleteMin(Node<T> node) {
 
 		if (null == node.left)
 			return node.right;
@@ -150,12 +150,32 @@ public class BST<T extends Comparable<T>> {
 		root = deleteMax(root);
 	}
 
-	public Node<T> deleteMax(Node<T> node) {
+	private Node<T> deleteMax(Node<T> node) {
 
 		if (null == node.right)
 			return node.left;
 
 		node.right = deleteMax(node.right);
+
+		return node;
+	}
+
+	public Node<T> getLowestCommonAncestor(T data1, T data2) {
+		return getLowestCommonAncestor(root, data1, data2);
+	}
+
+	private Node<T> getLowestCommonAncestor(Node<T> node, T data1, T data2) {
+
+		if (null == node)
+			return null;
+
+		int i = data1.compareTo(node.data);
+		int j = data2.compareTo(node.data);
+
+		if (i < 0 && j < 0)
+			return getLowestCommonAncestor(node.left, data1, data2);
+		else if (i > 0 && j > 0)
+			return getLowestCommonAncestor(node.right, data1, data2);
 
 		return node;
 	}
